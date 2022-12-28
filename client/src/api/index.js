@@ -21,6 +21,7 @@ const deletePost = (id) => API.delete(`/posts/${id}`);
 const likePost = (id) => API.patch(`/posts/${id}/likePost`);
 
 const signin = (inputText) => API.post("/user/signin", inputText);
+
 const signup = (inputText) => API.post("/user/signup", inputText);
 
 export {fetchPosts, createPost, updatePost, deletePost, likePost, signin, signup}; 

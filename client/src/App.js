@@ -1,23 +1,28 @@
 import React from "react";
 import { Container } from "@mui/material";
-import { BrowserRouter, Route, Navigate, Routes } from "react-router-dom";
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./components/Home/Home";
 import Auth from "./components/Auth/Auth";
 
-function App() {
+
+const App = () => {
+
+   const user = JSON.parse(localStorage.getItem('profile'));
+
    return (
-      <Container maxWidth="lg">
-         <BrowserRouter>
-            <Navbar />
-            <Routes>
-               <Route path="/" element={<Navigate to="/posts" replace/>}/>
-               <Route path="/posts" exact element={<Home />}/>
-               <Route path="/auth" exact element={<Auth />}/>
-            </Routes>
-         </BrowserRouter>
+      <BrowserRouter>
+      <Container maxWidth="xl">
+        <Navbar />
+        <Switch>
+          <Route path="/" exact component={() => <Redirect to="/posts" />} />
+          <Route path="/posts" exact component={Home} />
+          <Route path="/auth" exact component={() => (!user ? <Auth /> : <Redirect to="/posts" />)} />
+        </Switch>
       </Container>
-   )
-}
+    </BrowserRouter>
+  );
+};
 
 export default App;

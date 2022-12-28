@@ -1,14 +1,14 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "",
+  "description": "PostApp backend-api",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "start": "node index.js"
   },
   "keywords": [],
-  "author": "Ryan Vu",
+  "author": "Aleksander Maj",
   "license": "ISC",
   "engines": {
     "node": "16.17.1"
