@@ -1,7 +1,6 @@
 import axios from "axios";
 
-// Replace baseURL with API.
-const API = axios.create({ baseURL: "http://localhost:5001" });
+const API = axios.create({ baseURL: "https://postapp.up.railway.app/" });
 
 API.interceptors.request.use((req) => {
    if (localStorage.getItem("profile")) {
