@@ -54,7 +54,7 @@ function Form({ currentId, setCurrentId }) {
    return (
       <Paper className={classes.paper}>
          <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
-            <Typography variant="h6" textAlign="center">{currentId ? "Editting" : "Creating"} a Review</Typography>
+            <Typography variant="h6" textAlign="center">{currentId ? "Editting" : "Creating"} a Post </Typography>
             <TextField name="title" variant="outlined" label="Title" fullWidth value={postData.title} onChange={handleChange} />
             <TextField name="message" multiline variant="outlined" label="Message" fullWidth value={postData.message} onChange={handleChange} />
             <TextField name="tags" variant="outlined" label="Tags" fullWidth value={postData.tags} 
