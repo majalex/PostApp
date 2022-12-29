@@ -13,15 +13,33 @@ const useStyles = makeStyles()((theme) => {
       form: {
          display: "flex",
          flexWrap: "wrap",
-         justifyContent: "center",
+         justifyContent: "space-between",
       },
       fileInput: {
          width: "97%",
          margin: "10px 0",
       },
-      buttonSubmit: {
-         marginBottom: 10,
+      title: {
+         width: '49%',
+         margin: '0 !important'
       },
+      tags: {
+         width: '49%',
+         margin: '0 !important'
+      },
+      message: {
+         marginLeft: '0 !important',
+         marginRight: '0 !important'
+      },
+      h6: {
+         width: '100%'
+      },
+      buttons: {
+         width: '100%',
+         display: "flex",
+         flexWrap: "wrap",
+         justifyContent: "space-around"
+      }
    };
 });
 

@@ -1,5 +1,5 @@
 import { makeStyles } from "tss-react/mui";
-import { deepPurple } from "@mui/material/colors";
+import { lightBlue } from '@mui/material/colors';
 
 const useStyles = makeStyles()((theme) => {
    return {
@@ -11,7 +11,7 @@ const useStyles = makeStyles()((theme) => {
          justifyContent: 'space-between',
          alignItems: 'center',
          padding: '10px 50px',
-         [theme.breakpoints.down('sm')]: {
+         [theme.breakpoints.down('md')]: {
             flexDirection: 'column',
          },
          background: "#0466c8",
@@ -33,12 +33,7 @@ const useStyles = makeStyles()((theme) => {
          display: 'flex',
          justifyContent: 'space-evenly',
          width: '400px',
-         alignItems: 'center',
-         [theme.breakpoints.down('sm')]: {
-            width: 'auto',
-            marginTop: 20,
-            justifyContent: 'center',
-         },
+         alignItems: 'center'
       },
       logout: {
          marginLeft: '20px',
@@ -53,9 +48,10 @@ const useStyles = makeStyles()((theme) => {
          alignItems: 'center',
       },
       purple: {
-         color: theme.palette.getContrastText(deepPurple[500]),
-         backgroundColor: deepPurple[500],
-      },
+         scrollSnapMarginRight:'10px',
+         backgroundColor: lightBlue[600],
+         textAlign: 'center'
+      }
    };
 });
 

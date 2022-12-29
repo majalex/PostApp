@@ -23,7 +23,7 @@ const Auth = () => {
    const [isSignup, setIsSignup] = useState(false);
 
    const handleShowPassword = () => {
-      setShowPassword((prev) => !prev )
+      setShowPassword((prev) => !prev)
    }
 
    const handleSubmit = (event) => {
@@ -39,7 +39,7 @@ const Auth = () => {
       const { name, value } = event.target;
       setInputText({ ...inputText, [name]: value });
    }
-   
+
    const switchMode = () => {
       setIsSignup((prev) => !prev)
    }
@@ -52,8 +52,8 @@ const Auth = () => {
                   "Authorization": `Bearer ${tokenResponse.access_token}`
                }
             })
-            dispatch({ type: "AUTH", payload: res.data})
-            window.location.replace("/");            
+            dispatch({ type: "AUTH", payload: res.data })
+            window.location.replace("/");
          } catch (error) {
             console.log(error);
          }
@@ -66,34 +66,35 @@ const Auth = () => {
             <Avatar className={classes.avatar}>
                <LockOutlined />
             </Avatar>
-            <Typography variant='h5'>{isSignup? "Sign up" : "Sign in"}</Typography>
+            <Typography variant='h5'>{isSignup ? "Sign up" : "Sign in"}</Typography>
             <form className={classes.form} onSubmit={handleSubmit}>
                <Grid container spacing={2}>
                   {
-                  isSignup && (
-                     <>
-                        <Input name="firstName" label="First Name" handleChange={handleChange} autoFocus half value={inputText.firstName}/>
-                        <Input name="lastName" label="Last Name" handleChange={handleChange} half value={inputText.lastName}/>                     
-                     </>
-                  )
+                     isSignup && (
+                        <>
+                           <Input name="firstName" label="First Name" handleChange={handleChange} autoFocus half value={inputText.firstName} />
+                           <Input name="lastName" label="Last Name" handleChange={handleChange} half value={inputText.lastName} />
+                        </>
+                     )
                   }
                   <Input name="email" label="Email Address" handleChange={handleChange} type="email" value={inputText.email} />
-                  <Input name="password" label="Password" handleChange={handleChange} type={showPassword ? "text" : "password"} handleShowPassword={handleShowPassword} value={inputText.password}/>
-                  {isSignup && <Input name="confirmPassword" label="Confirm Password" handleChange={handleChange} type="password" value={inputText.confirmPassword}/>}
+                  <Input name="password" label="Password" handleChange={handleChange} type={showPassword ? "text" : "password"} handleShowPassword={handleShowPassword} value={inputText.password} />
+                  {isSignup && <Input name="confirmPassword" label="Confirm Password" handleChange={handleChange} type="password" value={inputText.confirmPassword} />}
                </Grid>
-               
+
                <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit}>
-                  {isSignup? "Sign Up" : "Sign In"}
+                  {isSignup ? "Sign Up" : "Sign In"}
                </Button>
-               <Button id="google" className={classes.googleButton} color="primary" fullWidth variant="contained" onClick={() => login()}>Sign in with Google</Button>  
-                           
-               <Grid container justifyContent="flex-end">
-                  <Grid item>
-                     <Button onClick={switchMode}>
-                        {isSignup ? "Already have Account? Sign In!" : "Don't have account? Sign Up!"}
-                     </Button>                  
-                  </Grid>
-               </Grid>
+               <Button id="google" className={classes.googleButton} color="primary" fullWidth variant="contained" onClick={() => login()}>Sign in with Google</Button>
+
+               <Button
+                  onClick={switchMode}
+                  variant="outlined"
+                  fullWidth
+               >
+                  {isSignup ? "Already have Account? Sign In!" : "Don't have account? Sign Up!"}
+               </Button>
+
             </form>
          </Paper>
       </Container>
