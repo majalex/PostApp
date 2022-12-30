@@ -12,10 +12,9 @@ A social media app built with React, Node.js, Mongo DB, Express and MUI, with Go
 ## Features
 
 - Post creation
-- editing, or deleteing posts
-- liking each other posts
 - user authentication
-
+- editing, or deleting posts
+- likes
 
 ## Tech Stack
 
