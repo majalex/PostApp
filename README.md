@@ -6,7 +6,8 @@ A social media app built with React, Node.js, Mongo DB, Express and MUI, with Go
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](![FireShot Capture 002 - Post App - postapp fun-min](https://user-images.githubusercontent.com/105987428/210068281-cbb5bffb-60dd-4436-bb72-6247d0467582.png))
+
 
 
 ## Features
